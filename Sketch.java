@@ -71,19 +71,21 @@ public class Sketch extends PApplet {
    * draws the bottom left section
    */
   public void draw_section1(){
-    int intX = 0;
-    int intY = 0;
+    int intX = 3;
+    int intY = 300 + 3;
 
     for(int intRow = 0; intRow < 30; intRow++){
+      intX = 3;
       for(int intColumn = 0; intColumn < 30; intColumn++){
-        intX = 3 + 0;  //Instead of zero, calculate the proper intX location using 'intRow'
-        intY = 300 + 3 + 0; //Instead of zero, calculate the proper intY location using 'intColumn'
 
         fill(255);
         noStroke();
         rect(intX, intY, 5, 5);
 
+        intX = intX + 10;  //Instead of zero, calculate the proper intX location using 'intRow'
+
       }
+      intY = intY + 10; //Instead of zero, calculate the proper intY location using 'intColumn'
     }
   }
 
@@ -92,7 +94,27 @@ public class Sketch extends PApplet {
    * Don't loop from 30 to 60 to shift everything over, just add 300 to x.
    */
   public void draw_section2(){
+    int intX = 303;
+    int intY = 300;
+    for(int intColumn = 0; intColumn < 30; intColumn++){
+      intY = 300 + 3;
 
+      if (intColumn % 2 == 1){
+          fill(0);
+        }
+        else{
+          fill(255);
+        }
+
+      for(int intRow = 0; intRow < 30; intRow++){
+
+        noStroke();
+        rect(intX, intY, 5, 5);
+        intY = intY + 10;
+
+      }
+      intX = intX + 10;
+    }
   }
 
   /**
@@ -100,34 +122,134 @@ public class Sketch extends PApplet {
    * Don't use multiple 'if' statements.
    */
   public void draw_section3(){
+    int intX = 600;
+    int intY = 300 + 3;
 
+    for(int intRow = 0; intRow < 30; intRow++){
+      intX = 600 + 3;
+
+      if (intRow % 2 == 0){
+        fill(0);
+      }
+      else{
+        fill(255);
+      }
+
+      for(int intColumn = 0; intColumn < 30; intColumn++){
+
+        noStroke();
+        rect(intX, intY, 5, 5);
+
+        intX = intX + 10;
+
+      }
+      intY = intY + 10;
+    }
   }
 
   /**
    * Use the modulus operator and just one 'if' statement to select the color.
    */
   public void draw_section4(){
+    int intX = 900;
+    int intY = 300 + 3;
 
+    for(int intRow = 0; intRow < 30; intRow++){
+      intX = 900 + 3;
+
+      for(int intColumn = 0; intColumn < 30; intColumn++){
+
+        if (intRow % 2 == 0 || intColumn % 2 == 1){
+          fill(0);
+        }
+        else{
+          fill(255);
+        }
+        noStroke();
+        rect(intX, intY, 5, 5);
+
+        intX = intX + 10;
+
+      }
+      intY = intY + 10;
+    }
   }
 
   /**
    * Do NOT use 'if' statements to complete 5-8. Manipulate the loops instead
    */
   public void draw_section5(){
+    int intX = 300 - 7;
+    int intY = 3;
 
+    for(int intRow = 0; intRow < 30; intRow++){
+      intX = 300 - 7;
+      for(int intColumn = 0; intColumn < intRow; intColumn++){
+          fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+
+        intX = intX - 10;
+
+      }
+      intY = intY + 10;
+    }
   }
 
   public void draw_section6(){
+    int intX = 300 + 3;
+    int intY = 3;
 
+    for(int intRow = 0; intRow < 30; intRow++){
+      intX = 300 + 3;
+      for(int intColumn = 0; intColumn <= intRow; intColumn++){
+          fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+
+        intX = intX + 10;
+
+      }
+      intY = intY + 10;
+    }
   }
 
   public void draw_section7(){
+    int intX = 600 + 3;
+    int intY = 300 - 7;
 
+    for(int intRow = 0; intRow < 30; intRow++){
+      intX = 600 + 3;
+      for(int intColumn = 0; intColumn <= intRow; intColumn++){
+          fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+
+        intX = intX + 10;
+
+      }
+      intY = intY - 10;
+    }
   }
   
   public void draw_section8(){
+    int intX = 1200 - 7;
+    int intY = 300 - 7;
 
+    for(int intRow = 0; intRow < 30; intRow++){
+      intX = 1200 - 7;
+      for(int intColumn = 0; intColumn <= intRow; intColumn++){
+          fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+
+        intX = intX - 10;
+
+      }
+      intY = intY - 10;
+    }
   }
+  // Ctrl + C, Ctrl + V, my beloved.
 
 
 
